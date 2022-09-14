@@ -12,7 +12,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Comics</a>
+                        <a class="nav-link" href="{{ route('works.index') }}">Comics</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">Artists</a>
