@@ -3,6 +3,7 @@
 use App\Models\Work;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class WorksTableSeeder extends Seeder
 {
@@ -133,6 +134,8 @@ class WorksTableSeeder extends Seeder
             $newWork->series = $work['series'];
             $newWork->sale_date = $work['sale_date'];
             $newWork->type = $work['type'];
+
+            $newWork->slug = Str::slug($newWork->title, '-');
 
             $newWork->save();
         }
