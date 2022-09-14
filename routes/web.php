@@ -13,4 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'WorkController@index')->name('works.index');
+Route::get('/', 'HomeController@index')->name('admin.home');
+Route::get('/works', 'WorkController@index')->name('works.index');
