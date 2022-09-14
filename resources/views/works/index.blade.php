@@ -6,7 +6,7 @@
     <div class="container my-5 py-2">
         <div class="row">
             <div class="col-12">
-                <table class="table table-dark table-striped table-hover">
+                <table class="table table-light table-striped table-hover">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -23,9 +23,14 @@
                         @forelse ($works as $work)
                             <tr>
                                 <th scope="row">{{ $work->id }}</th>
-                                <td>{{ $work->title }}</td>
+                                <td>
+                                    <a href="{{ route('works.show', $work->id) }}">{{ $work->title }}</a>
+                                </td>
                                 <td>{{ $work->description }}</td>
-                                <td> <img src="{{ $work->thumb }}" alt="{{ $work->title }}"></td>
+                                <td>
+                                    <a href="{{ route('works.show', $work->id) }}"> 
+                                        <img src="{{ $work->thumb }}" alt="{{ $work->title }}"></td>
+                                    </a>
                                 <td>{{ $work->series }}</td>
                                 <td>{{ $work->sale_date }}</td>
                                 <td>{{ $work->type }}</td>
