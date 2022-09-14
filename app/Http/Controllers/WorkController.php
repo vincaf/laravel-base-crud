@@ -48,7 +48,8 @@ class WorkController extends Controller
      */
     public function show($id)
     {
-        //
+        $work = Work::findOrFail($id);
+        return view('works.show', compact('work'));
     }
 
     /**
