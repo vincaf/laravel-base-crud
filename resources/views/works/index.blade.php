@@ -25,7 +25,7 @@
                                 <th scope="row">{{ $work->id }}</th>
                                 <td>{{ $work->title }}</td>
                                 <td>{{ $work->description }}</td>
-                                <td>{{ $work->thumb }}</td>
+                                <td> <img src="{{ $work->thumb }}" alt="{{ $work->title }}"></td>
                                 <td>{{ $work->series }}</td>
                                 <td>{{ $work->sale_date }}</td>
                                 <td>{{ $work->type }}</td>
