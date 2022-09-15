@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('admin.home');
 
-Route::get('/works', 'WorkController@index')->name('works.index');
-Route::get('/works/{work}', 'WorkController@show')->name('works.show');
+// Route::get('/works', 'WorkController@index')->name('works.index');
+// Route::get('/works/{work}', 'WorkController@show')->name('works.show');
 
-// Route::resource('/works', 'WorkController');
+Route::resource('/works', 'WorkController');
