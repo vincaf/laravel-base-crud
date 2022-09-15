@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title' . 'Create new comic')
+@section('title', 'Create new comic')
 
 @section('main-content')
     <div class="container my-5 py-2">
