@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Work;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class WorkController extends Controller
 {
@@ -26,7 +27,7 @@ class WorkController extends Controller
      */
     public function create()
     {
-        //
+        return view('works.create');
     }
 
     /**
@@ -37,7 +38,21 @@ class WorkController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sentData = $request->all();
+
+        $work = new Work();
+        $work->title = $sentData['title'];
+        $work->description = $sentData['description'];
+        $work->thumb = $sentData['thumb'];
+        $work->price = $sentData['price'];
+        $work->series = $sentData['series'];
+        $work->sale_date = $sentData['sale_date'];
+        $work->type = $sentData['type'];
+        $work->slug= Str::slug($work->title, '-');
+
+        $work->save();
+
+        return redirect()->route('works.show', $work->slug);
     }
 
     /**
