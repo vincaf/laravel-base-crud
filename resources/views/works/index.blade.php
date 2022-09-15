@@ -24,11 +24,11 @@
                             <tr>
                                 <th scope="row">{{ $work->id }}</th>
                                 <td>
-                                    <a href="{{ route('works.show', $work->id) }}">{{ $work->title }}</a>
+                                    <a href="{{ route('works.show', $work->slug) }}">{{ $work->title }}</a>
                                 </td>
                                 <td>{{ $work->description }}</td>
                                 <td>
-                                    <a href="{{ route('works.show', $work->id) }}"> 
+                                    <a href="{{ route('works.show', $work->slug) }}"> 
                                         <img src="{{ $work->thumb }}" alt="{{ $work->title }}"></td>
                                     </a>
                                 <td>{{ $work->series }}</td>

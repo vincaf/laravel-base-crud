@@ -43,12 +43,11 @@ class WorkController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $work = Work::findOrFail($id);
+        $work = Work::where('slug', $slug)->first();
         return view('works.show', compact('work'));
     }
 
