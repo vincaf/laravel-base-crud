@@ -81,12 +81,25 @@ class WorkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        //
+        $sentData = $request->all();
+
+        $work = Work::where('slug', $slug)->first();
+        $work->title = $sentData['title'];
+        $work->description = $sentData['description'];
+        $work->thumb = $sentData['thumb'];
+        $work->price = $sentData['price'];
+        $work->series = $sentData['series'];
+        $work->sale_date = $sentData['sale_date'];
+        $work->type = $sentData['type'];
+        $work->slug= Str::slug($work->title, '-');
+
+        $work->save();
+        
+        return redirect()->route('works.show', $work->slug);
     }
 
     /**
