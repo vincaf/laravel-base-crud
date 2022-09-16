@@ -20,31 +20,31 @@
 
                     <div class="mb-3">
                         <label for="input-title" class="form-label">Title</label>
-                        <input type="text" class="form-control" id="input-title" name="title">
+                        <input type="text" class="form-control" id="input-title" name="title" required>
                     </div>
                     <div class="mb-3">
                         <label for="input-description" class="form-label">Description</label>
-                        <textarea class="form-control" id="input-description" cols="30" rows='8' name="description"></textarea>
+                        <textarea class="form-control" id="input-description" cols="30" rows='8' name="description" required></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="input-thumb" class="form-label">Thumb</label>
-                        <input type="text" class="form-control" id="input-thumb" name="thumb">
+                        <input type="text" class="form-control" id="input-thumb" name="thumb" required>
                     </div>
                     <div class="mb-3">
                         <label for="input-price" class="form-label">Price</label>
-                        <input type="number" step="0.01" class="form-control" id="input-price" name="price">
+                        <input type="number" step="0.01" class="form-control" id="input-price" name="price" required>
                     </div>
                     <div class="mb-3">
                         <label for="input-series" class="form-label">Series</label>
-                        <input type="text" class="form-control" id="input-series" name="series">
+                        <input type="text" class="form-control" id="input-series" name="series" required>
                     </div>
                     <div class="mb-3">
                         <label for="input-sale_date" class="form-label">Sale date</label>
-                        <input type="date" class="form-control" id="input-sale_date" name="sale_date">
+                        <input type="date" class="form-control" id="input-sale_date" name="sale_date" required>
                     </div>
                     <div class="mb-3">
                         <label for="input-type" class="form-label">Type</label>
-                        <input type="text" class="form-control" id="input-type" name="type">
+                        <input type="text" class="form-control" id="input-type" name="type" required>
                     </div>
                     <div class="text-center mt-5">
                         <button type="submit" class="btn btn-primary btn-lg">Submit your comic</button>
