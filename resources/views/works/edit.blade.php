@@ -8,6 +8,7 @@
             <div class="col-10">
                 <form action="{{ route('works.store') }}" method="POST">
                     @csrf
+                    @method('PUT')
 
                     {{-- $newWork = new Work();
                     $newWork->title = $work['title'];
@@ -47,7 +48,7 @@
                         <input type="text" class="form-control" id="input-type" name="type" value="{{ $work->type }}" required>
                     </div>
                     <div class="text-center mt-5">
-                        <button type="submit" class="btn btn-primary btn-lg">Submit your comic</button>
+                        <button type="submit" class="btn btn-primary btn-lg">Edit your comic</button>
                     </div>
                 </form>
             </div>
