@@ -16,6 +16,7 @@
                             <th scope="col">Series</th>
                             <th scope="col">Sale_date</th>
                             <th scope="col">Type</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,10 +35,13 @@
                                 <td>{{ $work->series }}</td>
                                 <td>{{ $work->sale_date }}</td>
                                 <td>{{ $work->type }}</td>
+                                <td>
+                                    <a href="{{ route('works.edit', $work->slug) }}" class="btn btn-sm btn-success">Edit</a>
+                                </td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="1">There are no comics available.</td>
+                                <td colspan="6">There are no comics available.</td>
                             </tr>
                         @endforelse
                     </tbody>
