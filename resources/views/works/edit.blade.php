@@ -6,7 +6,7 @@
     <div class="container my-5 py-2">
         <div class="row justify-content-center">
             <div class="col-10">
-                <form action="{{ route('works.store') }}" method="POST">
+                <form action="{{ route('works.update', $work->slug) }}" method="POST">
                     @csrf
                     @method('PUT')
 
