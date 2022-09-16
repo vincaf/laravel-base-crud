@@ -69,12 +69,12 @@ class WorkController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $work = Work::where('slug', $slug)->first();
+        return view('works.edit', compact('work'));
     }
 
     /**
