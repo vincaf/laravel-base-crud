@@ -17,7 +17,10 @@ Route::get('/', 'HomeController@index')->name('admin.home');
 
 // Route::get('/works', 'WorkController@index')->name('works.index');
 // Route::post('/works', 'WorkController@index')->name('works.store');
-// Route::get('/works/{work}', 'WorkController@show')->name('works.show');
 // Route::get('/works/create', 'WorkController@create')->name('works.create');
+// Route::get('/works/{work}', 'WorkController@show')->name('works.show');
+// Route::put('/works/{work}', 'WorkController@update')->name('works.update');
+// Route::get('/works/{work}/edit', 'WorkController@edit')->name('works.edit');
+
 
 Route::resource('/works', 'WorkController');
