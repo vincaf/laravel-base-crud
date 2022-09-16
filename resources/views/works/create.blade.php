@@ -44,7 +44,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="input-type" class="form-label">Type</label>
-                        <input type="text" class="form-control" id="input-type" name="type" required>
+                        <select class="form-select" name="type" id="type" required>
+                            <option value="comic book">Comic Book</option>
+                            <option value="graphic novel">Graphic Novel</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
                     <div class="text-center mt-5">
                         <button type="submit" class="btn btn-primary btn-lg">Submit your comic</button>

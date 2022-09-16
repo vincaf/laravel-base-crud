@@ -45,7 +45,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="input-type" class="form-label">Type</label>
-                        <input type="text" class="form-control" id="input-type" name="type" value="{{ $work->type }}" required>
+                        <select class="form-select" name="type" id="type" required >
+                            <option value="comic book" {{($work->type == 'comic book') ? 'selected' : ''}}>Comic Book</option>
+                            <option value="graphic novel" {{$work->type == 'graphic novel' ? 'selected' : ''}}>Graphic Novel</option>
+                            <option value="other" {{($work->type == 'other') ? 'selected' : ''}}>Other</option>
+                        </select>
                     </div>
                     <div class="text-center mt-5">
                         <button type="submit" class="btn btn-primary btn-lg">Edit your comic</button>
