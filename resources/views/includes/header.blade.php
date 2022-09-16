@@ -14,12 +14,9 @@
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('works.index') ? 'active' : "" }}" href="{{ route('works.index') }}">Comics</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Artists</a>
-                    </li>
                 </ul>
                 <span class="navbar-text">
-                    Your favorite comics here
+                    <a class="btn btn-outline-light {{ request()->routeIs('works.create') ? 'active' : "" }}" href="{{ route('works.create') }}">Add new comic</a>
                 </span>
             </div>
         </div>
