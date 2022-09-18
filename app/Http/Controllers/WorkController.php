@@ -41,7 +41,8 @@ class WorkController extends Controller
      */
     public function create()
     {
-        return view('works.create');
+        $work = new Work();
+        return view('works.create', compact('work'));
     }
 
     /**
