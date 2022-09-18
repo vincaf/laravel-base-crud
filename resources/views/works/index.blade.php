@@ -37,6 +37,7 @@
                                 <td>{{ $work->type }}</td>
                                 <td>
                                     <a href="{{ route('works.edit', $work->slug) }}" class="btn btn-sm btn-success">Edit</a>
+                                    <a href=" " class="btn btn-sm btn-danger my-2">Remove</a>
                                 </td>
                             </tr>
                         @empty
