@@ -99,11 +99,15 @@ class WorkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        //
+        // $work = Work::where('slug', $slug)->first();
+        // $work->delete();
+
+        Work::destroy($slug);
+
+        return redirect()->route('works.index');
     }
 }
