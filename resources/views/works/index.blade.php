@@ -50,7 +50,7 @@
                                     <a href="{{ route('works.edit', $work->slug) }}"
                                         class="btn btn-sm btn-success">Edit</a>
 
-                                    <form action="{{ route('works.destroy', $work->id) }}" method="POST" class="form-work-delete">
+                                    <form action="{{ route('works.destroy', $work->id) }}" method="POST" class="form-work-delete" data-work-name="{{ $work->title }}">
                                         @csrf
                                         @method('DELETE')
 
@@ -78,8 +78,9 @@
         deleteFormElements.forEach(
             formElement => {
                 formElement.addEventListener('submit', function(event){
+                    const name = this.getAttribute('data-work-name');
                     event.preventDefault();
-                    const result = window.confirm('Are you sure you want to delete this comic?');
+                    const result = window.confirm(`Are you sure you want to delete "${name}"?`);
                     if(result) this.submit();
                 })
             }
