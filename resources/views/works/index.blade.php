@@ -6,6 +6,16 @@
     <div class="container my-5 py-2">
         <div class="row">
             <div class="col-12">
+                @if ( session('delete'))
+                    <div class="alert alert-warning">
+                        {{ session('delete') }} è stato rimosso con successo.
+                    </div>
+                @endif
+                @if ( session('created'))
+                    <div class="alert alert-success">
+                        {{ session('created') }} è stato creato con successo.
+                    </div>
+                @endif
                 <table class="table table-light table-striped table-hover">
                     <thead>
                         <tr>

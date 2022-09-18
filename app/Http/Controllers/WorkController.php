@@ -52,7 +52,7 @@ class WorkController extends Controller
 
         $work->save();
 
-        return redirect()->route('works.show', $work->slug);
+        return redirect()->route('works.index', $work->slug)->with('created', $sentData['title']);
     }
 
     /**
@@ -93,7 +93,7 @@ class WorkController extends Controller
 
         $work->update($sentData);
         
-        return redirect()->route('works.show', $work->slug);
+        return redirect()->route('works.show', $work->slug)->with('edited', $sentData['title']);
     }
 
     /**
@@ -104,8 +104,11 @@ class WorkController extends Controller
      */
     public function destroy($id)
     {
-        Work::destroy($id);
+        $work = Work::findOrFail($id);
+        $work->delete();
 
-        return redirect()->route('works.index');
+        // Work::destroy($id);
+
+        return redirect()->route('works.index')->with('delete', $work->title);
     }
 }
