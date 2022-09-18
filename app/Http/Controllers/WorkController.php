@@ -40,6 +40,21 @@ class WorkController extends Controller
     {
         $sentData = $request->all();
 
+        $validatedData = $request->validate(
+            [ 
+                'title' => 'required|min:3|max:255|unique:works',
+                'description' => 'required|min:5',
+                'thumb' => 'required|url',
+                'price' => 'required|numeric',
+                'series' => 'required|min:3|max:50',
+                'sale_date' => 'required|date|after:1900/01/01',
+                'type' => 'required|exists:works,type',
+            ],
+            [
+                'type.exists' => 'The selected type is not available',
+            ]
+        );
+
         $work = new Work();
         $work->title = $sentData['title'];
         $work->description = $sentData['description'];

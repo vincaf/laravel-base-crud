@@ -6,6 +6,17 @@
     <div class="container my-5 py-2">
         <div class="row justify-content-center">
             <div class="col-10">
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form action="{{ route('works.store') }}" method="POST">
                     @csrf
 
