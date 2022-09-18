@@ -6,12 +6,12 @@
     <div class="container my-5 py-2">
         <div class="row">
             <div class="col-12">
-                @if ( session('delete'))
+                @if (session('delete'))
                     <div class="alert alert-warning">
                         {{ session('delete') }} è stato rimosso con successo.
                     </div>
                 @endif
-                @if ( session('created'))
+                @if (session('created'))
                     <div class="alert alert-success">
                         {{ session('created') }} è stato creato con successo.
                     </div>
@@ -39,16 +39,18 @@
                                 </td>
                                 <td>{{ $work->description }}</td>
                                 <td>
-                                    <a href="{{ route('works.show', $work->slug) }}"> 
-                                        <img src="{{ $work->thumb }}" alt="{{ $work->title }}"></td>
-                                    </a>
+                                    <a href="{{ route('works.show', $work->slug) }}">
+                                        <img src="{{ $work->thumb }}" alt="{{ $work->title }}">
+                                </td>
+                                </a>
                                 <td>{{ $work->series }}</td>
                                 <td>{{ $work->sale_date }}</td>
                                 <td>{{ $work->type }}</td>
                                 <td>
-                                    <a href="{{ route('works.edit', $work->slug) }}" class="btn btn-sm btn-success">Edit</a>
+                                    <a href="{{ route('works.edit', $work->slug) }}"
+                                        class="btn btn-sm btn-success">Edit</a>
 
-                                    <form action="{{ route('works.destroy', $work->id) }}" method="POST">
+                                    <form action="{{ route('works.destroy', $work->id) }}" method="POST" class="form-work-delete">
                                         @csrf
                                         @method('DELETE')
 
@@ -68,4 +70,19 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('footer-scripts')
+    <script>
+        const deleteFormElements = document.querySelectorAll('.form-work-delete');
+        deleteFormElements.forEach(
+            formElement => {
+                formElement.addEventListener('submit', function(event){
+                    event.preventDefault();
+                    const result = window.confirm('Sei sicuro di voler continuare?');
+                    if(result) this.submit();
+                })
+            }
+        )
+    </script>
 @endsection
