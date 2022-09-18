@@ -16,13 +16,18 @@
                     <p class="card-text">{{ $work->description }}</p>
                     <h6>{{ $work->price }}€</h6>
                 </div>
-                <div class="form-group p-3 text-center">
+                <div class="form-group p-3 d-flex justify-content-center">
                     <a href="{{ route('works.edit', $work->slug) }}" class="btn btn-sm btn-success mx-1">
                         Edit comic
                     </a>
-                    <a href=" " class="btn btn-sm btn-danger mx-1">
-                        Delete comic
-                    </a>
+                    <form action="{{ route('works.destroy', $work->slug) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" class="btn btn-sm btn-danger mx-1">
+                            Delete comic
+                        </button>
+                    </form>
                 </div>
                 <div class="card-footer text-muted">
                     {{ $work->sale_date }}
