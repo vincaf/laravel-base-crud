@@ -20,7 +20,7 @@
                     <a href="{{ route('works.edit', $work->slug) }}" class="btn btn-sm btn-success mx-1">
                         Edit comic
                     </a>
-                    <form action="{{ route('works.destroy', $work->slug) }}" method="POST">
+                    <form action="{{ route('works.destroy', $work->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
 

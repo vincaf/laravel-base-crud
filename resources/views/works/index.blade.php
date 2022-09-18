@@ -38,7 +38,7 @@
                                 <td>
                                     <a href="{{ route('works.edit', $work->slug) }}" class="btn btn-sm btn-success">Edit</a>
 
-                                    <form action="{{ route('works.destroy', $work->slug) }}" method="POST">
+                                    <form action="{{ route('works.destroy', $work->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
 
