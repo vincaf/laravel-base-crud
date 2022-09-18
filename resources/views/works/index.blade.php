@@ -79,7 +79,7 @@
             formElement => {
                 formElement.addEventListener('submit', function(event){
                     event.preventDefault();
-                    const result = window.confirm('Sei sicuro di voler continuare?');
+                    const result = window.confirm('Are you sure you want to delete this comic?');
                     if(result) this.submit();
                 })
             }
