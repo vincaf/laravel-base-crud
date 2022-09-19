@@ -92,7 +92,7 @@ class WorkController extends Controller
      */
     public function show($slug)
     {
-        $work = Work::where('slug', $slug)->first();
+        $work = Work::where('slug', $slug)->firstOrFail();
         return view('works.show', compact('work'));
     }
 
@@ -103,7 +103,7 @@ class WorkController extends Controller
      */
     public function edit($slug)
     {
-        $work = Work::where('slug', $slug)->first();
+        $work = Work::where('slug', $slug)->firstOrFail();
         return view('works.edit', compact('work'));
     }
 
@@ -119,7 +119,7 @@ class WorkController extends Controller
 
         $validatedData = $request->validate($this->validationRules, $this->customValidationMessages);
 
-        $work = Work::where('slug', $slug)->first();
+        $work = Work::where('slug', $slug)->firstOrFail();
         $sentData['slug'] = Str::slug($sentData['title'], '-');
         $work->slug;
 
